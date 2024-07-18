@@ -33,17 +33,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
-      uses: actions/checkout@v2
+      uses: actions/checkout@v4
     - name: Makepkg Build and Check
       id: makepkg
-      uses: edlanglois/pkgbuild-action@v1
+      uses: edlanglois/pkgbuild-action@master
     - name: Print Package Files
       run: |
         echo "Successfully created the following package archive"
         echo "Package: ${{ steps.makepkg.outputs.pkgfile0 }}"
     # Uncomment to upload the package as an artifact
     # - name: Upload Package Archive
-    #   uses: actions/upload-artifact@v2
+    #   uses: actions/upload-artifact@v4
     #   with:
     #     path: ${{ steps.makepkg.outputs.pkgfile0 }}
 ```
